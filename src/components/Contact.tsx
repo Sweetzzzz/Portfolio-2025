@@ -21,7 +21,6 @@ export default function Contact() {
 
   useEffect(() => {
     const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    console.log('Public Key:', publicKey)
     if (publicKey) {
       emailjs.init(publicKey)
     }
