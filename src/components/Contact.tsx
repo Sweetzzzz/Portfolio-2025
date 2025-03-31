@@ -20,10 +20,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    if (publicKey) {
-      emailjs.init(publicKey)
-    }
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '')
   }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
