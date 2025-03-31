@@ -32,33 +32,25 @@ export default function Contact() {
     setIsSubmitting(true)
     setStatus({ type: null, message: '' })
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-
-    console.log('Service ID:', serviceId)
-    console.log('Template ID:', templateId)
-    console.log('Public Key:', publicKey)
-
     try {
-      const result = await emailjs.sendForm(
-        serviceId!,
-        templateId!,
-        e.target as HTMLFormElement,
-        publicKey
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.user_name,
+          from_email: formData.user_email,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       )
 
-      if (result.status === 200) {
-        setStatus({
-          type: 'success',
-          message: 'Message sent successfully! I will get back to you soon.'
-        })
-        setFormData({ user_name: '', user_email: '', message: '' })
-      } else {
-        throw new Error('Failed to send message')
-      }
+      setStatus({
+        type: 'success',
+        message: 'Message sent successfully! I will get back to you soon.'
+      })
+      setFormData({ user_name: '', user_email: '', message: '' })
     } catch (error) {
-      console.error('Error sending message:', error)
+      console.error('Error sending email:', error)
       setStatus({
         type: 'error',
         message: 'Something went wrong. Please try again.'
