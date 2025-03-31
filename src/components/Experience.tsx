@@ -6,7 +6,7 @@ const experiences = [
   {
     title: 'Front End Lead',
     company: 'Icebreak',
-    period: '2023',
+    period: '2024',
     description: [
       'Built and optimized React interfaces for a campus social platform',
       'Implemented event scheduling, messaging, and personalized feeds',
@@ -16,7 +16,7 @@ const experiences = [
   {
     title: 'Frontend Software Engineer',
     company: 'BroncoBond',
-    period: '2023',
+    period: '2024',
     description: [
       'Designed responsive Flutter UIs for a social platform',
       'Integrated event management, group messaging, and location-based features',
@@ -26,7 +26,7 @@ const experiences = [
   {
     title: 'UI Designer',
     company: 'College Voter Registration Outreach',
-    period: '2022',
+    period: '2024',
     description: [
       'Developed a UI for an internal admin panel to streamline voter registration',
       'Integrated an OCR model for automated data extraction in swing states',
@@ -36,7 +36,7 @@ const experiences = [
   {
     title: 'Tutor',
     company: 'Cal Poly Pomona',
-    period: '2022',
+    period: '2024',
     description: [
       'Assisted students with homework, study habits, and exam prep',
       'Identified weaknesses and improved problem-solving skills'
