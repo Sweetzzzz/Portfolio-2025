@@ -13,7 +13,7 @@ export default function Hero() {
           className="space-y-8"
         >
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Hello, I'm Jacob Lembach. A passionate UX/UI Frontend Developer.
+            Hello, I'm Jacob Lembach. A passionate Frontend Developer.
           </p>
           
           <h1 className="text-4xl md:text-6xl font-bold">
